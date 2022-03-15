@@ -1,76 +1,123 @@
-<!doctype html> <html lang=en  class=has-navbar-fixed-top > <meta charset=UTF-8 > <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/libs/highlight/github.min.css"> <link rel=stylesheet  href="/css/styles.css"> <style> html {font-size: 17px;} .franklin-content {position: relative; padding-left: 8%; padding-right: 5%; line-height: 1.35em;} @media (min-width: 940px) { .franklin-content {width: 100%; margin-left: auto; margin-right: auto;} } @media (max-width: 768px) { .franklin-content {padding-left: 6%; padding-right: 6%;} } </style> <link rel=icon  href="/assets/favicon.png"> <title>Template</title> <script src="/libs/highlight/highlight.pack.js"></script> <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script> <script type=module  src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script> <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> <script> hljs.getLanguage('julia').keywords.custom = 'obj grad hess AbstractNLPModel'; </script> <nav class="navbar is-primary is-fixed-top" role=navigation  aria-label="main navigation"> <div class=navbar-brand > <a class=navbar-item  href="https://jso-docs.github.io"> <img src="/assets/jso.png"> </a> <a role=button  class=navbar-burger  aria-label=menu  aria-expanded=false  data-target=navbarBasicExample > <span aria-hidden=true ></span> <span aria-hidden=true ></span> <span aria-hidden=true ></span> </a> </div> <div id=navbarBasicExample  class=navbar-menu > <div class=navbar-start > <a class=navbar-item  href="/"> Home </a> <a class=navbar-item  href="/news-and-blogposts/"> News and Blogposts </a> <a class=navbar-item  href="/tutorials/"> Tutorials </a> <div class="navbar-item has-dropdown is-hoverable"> <a class=navbar-link  href="/ecosystems/index.html"> Ecosystems </a> <div class=navbar-dropdown > <a class=navbar-item  href="/ecosystems/linear-algebra/"> Linear Algebra </a> <a class=navbar-item  href="/ecosystems/models/"> Models </a> <a class=navbar-item  href="/ecosystems/solvers/"> Solvers </a> </div> </div> <a class=navbar-item  href="/references/"> References </a> <a class=navbar-item  href="/contributing/"> Contributing </a> </div> <div class=navbar-end > <div class=navbar-item > </div> </div> </div> </nav> <section class=section > <div class=container > <div class=content ><div class=franklin-content ><h1 id=title ><a href="#title" class=header-anchor >Template</a></h1></p> <div class=author >by AUTHORS</div> <p> <pre><code class=language-julia >#&#61;tmp/jl_EjmYNF&#61;#</code></pre>
+<!doctype html> <html lang=en  class=has-navbar-fixed-top > <meta charset=UTF-8 > <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/libs/highlight/github.min.css"> <link rel=stylesheet  href="/css/styles.css"> <style> html {font-size: 17px;} .franklin-content {position: relative; padding-left: 8%; padding-right: 5%; line-height: 1.35em;} @media (min-width: 940px) { .franklin-content {width: 100%; margin-left: auto; margin-right: auto;} } @media (max-width: 768px) { .franklin-content {padding-left: 6%; padding-right: 6%;} } </style> <link rel=icon  href="/assets/favicon.png"> <title>Template</title> <script src="/libs/highlight/highlight.pack.js"></script> <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script> <script type=module  src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script> <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> <script> hljs.getLanguage('julia').keywords.custom = 'obj grad hess AbstractNLPModel'; </script> <nav class="navbar is-primary is-fixed-top" role=navigation  aria-label="main navigation"> <div class=navbar-brand > <a class=navbar-item  href="https://jso-docs.github.io"> <img src="/assets/jso.png"> </a> <a role=button  class=navbar-burger  aria-label=menu  aria-expanded=false  data-target=navbarBasicExample > <span aria-hidden=true ></span> <span aria-hidden=true ></span> <span aria-hidden=true ></span> </a> </div> <div id=navbarBasicExample  class=navbar-menu > <div class=navbar-start > <a class=navbar-item  href="/"> Home </a> <a class=navbar-item  href="/news-and-blogposts/"> News and Blogposts </a> <a class=navbar-item  href="/tutorials/"> Tutorials </a> <div class="navbar-item has-dropdown is-hoverable"> <a class=navbar-link  href="/ecosystems/index.html"> Ecosystems </a> <div class=navbar-dropdown > <a class=navbar-item  href="/ecosystems/linear-algebra/"> Linear Algebra </a> <a class=navbar-item  href="/ecosystems/models/"> Models </a> <a class=navbar-item  href="/ecosystems/solvers/"> Solvers </a> </div> </div> <a class=navbar-item  href="/references/"> References </a> <a class=navbar-item  href="/contributing/"> Contributing </a> </div> <div class=navbar-end > <div class=navbar-item > </div> </div> </div> </nav> <section class=section > <div class=container > <div class=content ><div class=franklin-content ><h1 id=title ><a href="#title" class=header-anchor >Template</a></h1></p> <div class=author >by AUTHORS</div> <p><img class=badge  src="https://img.shields.io/badge/Plots-1.27.0-666?style=flat-square&labelColor=999"> <img class=badge  src="https://img.shields.io/badge/Printf-STDLIB-666?style=flat-square&labelColor=444"> <img class=badge  src="https://img.shields.io/badge/Random-STDLIB-666?style=flat-square&labelColor=444"> <p>In this tutorial we illustrate the main uses of <code>SolverBenchmark</code>.</p> <p>First, let&#39;s create fake data. It is imperative that the data for each solver be stored in <code>DataFrame</code>s, and the collection of different solver must be stored in a dictionary of <code>Symbol</code> to <code>DataFrame</code>.</p> <p>In our examples we&#39;ll use the following data.</p> <pre><code class=language-julia >using DataFrames, Printf, Random
 
-</div>
-    </div>  
-    </div>  
-    </div>  
-  </section>  
+Random.seed&#33;&#40;0&#41;
 
-    
-    
-        
-<script>hljs.initHighlightingOnLoad(); hljs.configure({ tabReplace: '    ' });</script>
+n &#61; 10
+names &#61; &#91;:alpha, :beta, :gamma&#93;
+stats &#61; Dict&#40;name &#61;&gt; DataFrame&#40;:id &#61;&gt; 1:n,
+         :name &#61;&gt; &#91;@sprintf&#40;&quot;prob&#37;03d&quot;, i&#41; for i &#61; 1:n&#93;,
+         :status &#61;&gt; map&#40;x -&gt; x &lt; 0.75 ? :first_order : :failure, rand&#40;n&#41;&#41;,
+         :f &#61;&gt; randn&#40;n&#41;,
+         :t &#61;&gt; 1e-3 .&#43; rand&#40;n&#41; * 1000,
+         :iter &#61;&gt; rand&#40;10:10:100, n&#41;,
+         :irrelevant &#61;&gt; randn&#40;n&#41;&#41; for name in names&#41;</code></pre><pre><code class="plaintext code-output">ArgumentError: Package DataFrames not found in current path:
+- Run `import Pkg; Pkg.add("DataFrames")` to install the DataFrames package.
 
+</code></pre> <p>The data consists of a &#40;fake&#41; run of three solvers <code>alpha</code>, <code>beta</code> and <code>gamma</code>. Each solver has a column <code>id</code>, which is necessary for joining the solvers &#40;names can be repeated&#41;, and columns <code>name</code>, <code>status</code>, <code>f</code>, <code>t</code> and <code>iter</code> corresponding to problem results. There is also a column <code>irrelevant</code> with extra information that will not be used to produce our benchmarks.</p> <p>Here are the statistics of solver <code>alpha</code>:</p> <pre><code class=language-julia >stats&#91;:alpha&#93;</code></pre><pre><code class="plaintext code-output">UndefVarError: stats not defined
+</code></pre> <h2 id=tables ><a href="#tables" class=header-anchor >Tables</a></h2> <p>The first thing we may want to do is produce a table for each solver. Notice that the solver result is already a DataFrame, so there are a few options available in other packages, as well as simply printing the DataFrame. Our concern here is two-fold: producing publication-ready LaTeX tables, and web-ready markdown tables.</p> <p>The simplest use is <code>pretty_stats&#40;io, dataframe&#41;</code>. By default, <code>io</code> is <code>stdout</code>:</p> <pre><code class=language-julia >using SolverBenchmark
 
-<script>
-  (function () {
+pretty_stats&#40;stats&#91;:alpha&#93;&#41;</code></pre><pre><code class="plaintext code-output">ArgumentError: Package SolverBenchmark not found in current path:
+- Run `import Pkg; Pkg.add("SolverBenchmark")` to install the SolverBenchmark package.
 
-    // Get the elements.
-    // - the 'pre' element.
-    // - the 'div' with the 'paste-content' id.
+</code></pre> <p>Printing is LaTeX format is achieved with <code>pretty_latex_stats</code>:</p> <pre><code class=language-julia >pretty_latex_stats&#40;stats&#91;:alpha&#93;&#41;</code></pre><pre><code class="plaintext code-output">UndefVarError: stats not defined
+</code></pre> <p>Alternatively, you can print to a file.</p> <pre><code class=language-julia >open&#40;&quot;alpha.tex&quot;, &quot;w&quot;&#41; do io
+  println&#40;io, &quot;\\documentclass&#91;varwidth&#61;20cm,crop&#61;true&#93;&#123;standalone&#125;&quot;&#41;
+  println&#40;io, &quot;\\usepackage&#123;longtable&#125;&quot;&#41;
+  println&#40;io, &quot;\\begin&#123;document&#125;&quot;&#41;
+  pretty_latex_stats&#40;io, stats&#91;:alpha&#93;&#41;
+  println&#40;io, &quot;\\end&#123;document&#125;&quot;&#41;
+end
 
-    var pre = document.getElementsByTagName('pre');
+run&#40;&#96;latexmk -quiet -pdf alpha.tex&#96;&#41;
+run&#40;&#96;pdf2svg alpha.pdf alpha.svg&#96;&#41;</code></pre><pre><code class="plaintext code-output">UndefVarError: stats not defined
+</code></pre> <p><img src=alpha.svg  alt="" /></p> <p>If only a subset of columns should be printed, the DataFrame should be indexed accordingly:</p> <pre><code class=language-julia >df &#61; stats&#91;:alpha&#93;
+pretty_stats&#40;df&#91;&#33;, &#91;:name, :f, :t&#93;&#93;&#41;</code></pre><pre><code class="plaintext code-output">UndefVarError: stats not defined
+</code></pre> <p>Markdown tables may be generated by supplying the PrettyTables <code>tf</code> keyword argument to specify the table format:</p> <pre><code class=language-julia >pretty_stats&#40;df&#91;&#33;, &#91;:name, :f, :t&#93;&#93;, tf&#61;tf_markdown&#41;</code></pre><pre><code class="plaintext code-output">UndefVarError: df not defined
+</code></pre> <p>All values of <code>tf</code> accepted by PrettyTables may be used in SolverBenchmark.</p> <p>The <code>fmt_override</code> option overrides the formatting of a specific column. The argument should be a dictionary of <code>Symbol</code> to format strings, where the format string will be applied to each element of the column.</p> <p>The <code>hdr_override</code> changes the column headers.</p> <pre><code class=language-julia >fmt_override &#61; Dict&#40;:f &#61;&gt; &quot;&#37;&#43;10.3e&quot;,
+                    :t &#61;&gt; &quot;&#37;08.2f&quot;&#41;
+hdr_override &#61; Dict&#40;:name &#61;&gt; &quot;Name&quot;, :f &#61;&gt; &quot;f&#40;x&#41;&quot;, :t &#61;&gt; &quot;Time&quot;&#41;
+pretty_stats&#40;stdout,
+             df&#91;&#33;, &#91;:name, :f, :t&#93;&#93;,
+             col_formatters &#61; fmt_override,
+             hdr_override &#61; hdr_override&#41;</code></pre><pre><code class="plaintext code-output">UndefVarError: df not defined
+</code></pre> <p>While <code>col_formatters</code> is for simple format strings, the PrettyTables API lets us define more elaborate formatters in the form of functions:</p> <pre><code class=language-julia >fmt_override &#61; Dict&#40;:f &#61;&gt; &quot;&#37;&#43;10.3e&quot;,
+                    :t &#61;&gt; &quot;&#37;08.2f&quot;&#41;
+hdr_override &#61; Dict&#40;:name &#61;&gt; &quot;Name&quot;, :f &#61;&gt; &quot;f&#40;x&#41;&quot;, :t &#61;&gt; &quot;Time&quot;&#41;
+pretty_stats&#40;df&#91;&#33;, &#91;:name, :f, :t&#93;&#93;,
+             col_formatters &#61; fmt_override,
+             hdr_override &#61; hdr_override,
+             formatters &#61; &#40;v, i, j&#41; -&gt; begin
+               if j &#61;&#61; 3  # t is the 3rd column
+                 vi &#61; floor&#40;Int, v&#41;
+                 minutes &#61; div&#40;vi, 60&#41;
+                 seconds &#61; vi &#37; 60
+                 micros &#61; round&#40;Int, 1e6 * &#40;v - vi&#41;&#41;
+                 @sprintf&#40;&quot;&#37;2dm &#37;02ds &#37;06dμs&quot;, minutes, seconds, micros&#41;
+               else
+                 v
+               end
+             end&#41;</code></pre><pre><code class="plaintext code-output">LoadError: UndefVarError: @sprintf not defined
+in expression starting at none:10
+</code></pre> <p>See the <a href="https://ronisbr.github.io/PrettyTables.jl/stable/man/formatters/">PrettyTables.jl documentation</a> for more information.</p> <p>When using LaTeX format, the output must be understood by LaTeX. By default, numerical data in the table is wrapped in inline math environments. But those math environments would interfere with our formatting of the time. Thus we must first disable them for the <code>time</code> column using <code>col_formatters</code>, and then apply the PrettyTables formatter as above:</p> <pre><code class=language-julia >fmt_override &#61; Dict&#40;:f &#61;&gt; &quot;&#37;&#43;10.3e&quot;,
+                    :t &#61;&gt; &quot;&#37;08.2f&quot;&#41;
+hdr_override &#61; Dict&#40;:name &#61;&gt; &quot;Name&quot;, :f &#61;&gt; &quot;f&#40;x&#41;&quot;, :t &#61;&gt; &quot;Time&quot;&#41;
+open&#40;&quot;alpha2.tex&quot;, &quot;w&quot;&#41; do io
+  println&#40;io, &quot;\\documentclass&#91;varwidth&#61;20cm,crop&#61;true&#93;&#123;standalone&#125;&quot;&#41;
+  println&#40;io, &quot;\\usepackage&#123;longtable&#125;&quot;&#41;
+  println&#40;io, &quot;\\begin&#123;document&#125;&quot;&#41;
+  pretty_latex_stats&#40;io,
+                    df&#91;&#33;, &#91;:name, :status, :f, :t, :iter&#93;&#93;,
+                    col_formatters &#61; Dict&#40;:t &#61;&gt; &quot;&#37;f&quot;&#41;,  # disable default formatting of t
+                    formatters &#61; &#40;v,i,j&#41; -&gt; begin
+                      if j &#61;&#61; 4
+                        xi &#61; floor&#40;Int, v&#41;
+                        minutes &#61; div&#40;xi, 60&#41;
+                        seconds &#61; xi &#37; 60
+                        micros &#61; round&#40;Int, 1e6 * &#40;v - xi&#41;&#41;
+                        @sprintf&#40;&quot;\\&#40;&#37;2d\\&#41;m \\&#40;&#37;02d\\&#41;s \\&#40;&#37;06d \\mu\\&#41;s&quot;, minutes, seconds, micros&#41;
+                      else
+                        v
+                      end
+                  end&#41;
+  println&#40;io, &quot;\\end&#123;document&#125;&quot;&#41;
+end
 
-    // Add a copy button in the 'pre' element with className language-julia
+run&#40;&#96;latexmk -quiet -pdf alpha2.tex&#96;&#41;
+run&#40;&#96;pdf2svg alpha2.pdf alpha2.svg&#96;&#41;</code></pre><pre><code class="plaintext code-output">LoadError: UndefVarError: @sprintf not defined
+in expression starting at none:14
+</code></pre> <p><img src=alpha2.svg  alt="" /></p> <h3 id=joining_tables ><a href="#joining_tables" class=header-anchor >Joining tables</a></h3> <p>In some occasions, instead of/in addition to showing individual results, we show a table with the result of multiple solvers.</p> <pre><code class=language-julia >df &#61; join&#40;stats, &#91;:f, :t&#93;&#41;
+pretty_stats&#40;stdout, df&#41;</code></pre><pre><code class="plaintext code-output">UndefVarError: stats not defined
+</code></pre> <p>The column <code>:id</code> is used as guide on where to join. In addition, we may have repeated columns between the solvers. We convery that information with argument <code>invariant_cols</code>.</p> <pre><code class=language-julia >df &#61; join&#40;stats, &#91;:f, :t&#93;, invariant_cols&#61;&#91;:name&#93;&#41;
+pretty_stats&#40;stdout, df&#41;</code></pre><pre><code class="plaintext code-output">UndefVarError: stats not defined
+</code></pre> <p><code>join</code> also accepts <code>hdr_override</code> for changing the column name before appending <code>_solver</code>.</p> <pre><code class=language-julia >hdr_override &#61; Dict&#40;:name &#61;&gt; &quot;Name&quot;, :f &#61;&gt; &quot;f&#40;x&#41;&quot;, :t &#61;&gt; &quot;Time&quot;&#41;
+df &#61; join&#40;stats, &#91;:f, :t&#93;, invariant_cols&#61;&#91;:name&#93;, hdr_override&#61;hdr_override&#41;
+pretty_stats&#40;stdout, df&#41;
 
-    for (var i = 0; i < pre.length; i++) {
-      var isLanguage = pre[i].children[0].className.indexOf('language-julia');
+hdr_override &#61; Dict&#40;:name &#61;&gt; &quot;Name&quot;, :f &#61;&gt; &quot;\\&#40;f&#40;x&#41;\\&#41;&quot;, :t &#61;&gt; &quot;Time&quot;&#41;
+df &#61; join&#40;stats, &#91;:f, :t&#93;, invariant_cols&#61;&#91;:name&#93;, hdr_override&#61;hdr_override&#41;
+open&#40;&quot;alpha3.tex&quot;, &quot;w&quot;&#41; do io
+  println&#40;io, &quot;\\documentclass&#91;varwidth&#61;20cm,crop&#61;true&#93;&#123;standalone&#125;&quot;&#41;
+  println&#40;io, &quot;\\usepackage&#123;longtable&#125;&quot;&#41;
+  println&#40;io, &quot;\\begin&#123;document&#125;&quot;&#41;
+  pretty_latex_stats&#40;io, df&#41;
+  println&#40;io, &quot;\\end&#123;document&#125;&quot;&#41;
+end
 
-      if (isLanguage === 0) {
-        var ion_icon = document.createElement('ion-icon');
-        ion_icon.name = 'copy';
+run&#40;&#96;latexmk -quiet -pdf alpha3.tex&#96;&#41;
+run&#40;&#96;pdf2svg alpha3.pdf alpha3.svg&#96;&#41;</code></pre><pre><code class="plaintext code-output">UndefVarError: stats not defined
+</code></pre> <p><img src=alpha3.svg  alt="" /></p> <h2 id=profiles ><a href="#profiles" class=header-anchor >Profiles</a></h2> <p>Performance profiles are a comparison tool developed by <a href="https://link.springer.com/article/10.1007/s101070100263/">Dolan and Moré, 2002</a> that takes into account the relative performance of a solver and whether it has achieved convergence for each problem. <code>SolverBenchmark.jl</code> uses <a href="https://github.com/JuliaSmoothOptimizers/BenchmarkProfiles.jl">BenchmarkProfiles.jl</a> for generating performance profiles from the dictionary of <code>DataFrame</code>s.</p> <p>The basic usage is <code>performance_profile&#40;stats, cost&#41;</code>, where <code>cost</code> is a function applied to a <code>DataFrame</code> and returning a vector. Running on setup to avoid warnings</p> <pre><code class=language-julia >using Plots
+pyplot&#40;&#41;
 
-        var icon = document.createElement('span');
-        icon.className = 'icon has-text-primary';
-        icon.appendChild(ion_icon);
+p &#61; performance_profile&#40;stats, df -&gt; df.t&#41;
+Plots.svg&#40;p, &quot;profile1&quot;&#41;</code></pre><pre><code class="plaintext code-output">ArgumentError: Package PyPlot not found in current path:
+- Run `import Pkg; Pkg.add("PyPlot")` to install the PyPlot package.
 
-        var button = document.createElement('button');
-        button.className = 'button copy-button is-light is-primary';
-        button.appendChild(icon);
-
-        pre[i].appendChild(button);
-      }
-    };
-
-    // Run Clipboard
-
-    var copyCode = new ClipboardJS('.copy-button', {
-      target: function (trigger) {
-        return trigger.previousElementSibling;
-      }
-    });
-
-    copyCode.on('success', function (event) {
-      event.clearSelection();
-      var btn = event.trigger;
-      var old_button_class = btn.className;
-      var old_icon_class = btn.children[0].className;
-      btn.className = 'button copy-button is-primary';
-      btn.children[0].className = 'icon has-text-white';
-      window.setTimeout(function () {
-        event.trigger.className = old_button_class;
-        event.trigger.children[0].className = old_icon_class;
-      }, 1000);
-
-    });
-
-  })();
-</script>
-    
-    <footer class=footer >
-      <div class="content has-text-centered is-small">
-        &copy; Abel Soares Siqueira. <br>
-        Last modified: March 15, 2022.<br>
-        <a ckass=link  href="https://github.com/jso-docs/">jso-docs at GitHub</a>
-      </div>
-    </footer>
+</code></pre> <p>#&#61; using Plots pyplot&#40;&#41;</p> <p>p &#61; performance_profile&#40;stats, df -&gt; df.t&#41; Plots.svg&#40;p, &quot;profile1&quot;&#41; #&#61;</p> <p><img src=profile1.svg  alt="" /></p> <p>Notice that we used <code>df -&gt; df.t</code> which corresponds to the column <code>:t</code> of the <code>DataFrame</code>s. This does not take into account that the solvers have failed for a few problems &#40;according to column :status&#41;. The next profile takes that into account.</p> <pre><code class=language-julia >cost&#40;df&#41; &#61; &#40;df.status .&#33;&#61; :first_order&#41; * Inf &#43; df.t
+p &#61; performance_profile&#40;stats, cost&#41;
+Plots.svg&#40;p, &quot;profile2&quot;&#41;</code></pre><pre><code class="plaintext code-output">UndefVarError: performance_profile not defined
+</code></pre> <p>#&#61; cost&#40;df&#41; &#61; &#40;df.status .&#33;&#61; :first<em>order&#41; * Inf &#43; df.t p &#61; performance</em>profile&#40;stats, cost&#41; Plots.svg&#40;p, &quot;profile2&quot;&#41; #&#61;</p> <p><img src=profile2.svg  alt="" /></p> <h3 id=profile_wall ><a href="#profile_wall" class=header-anchor >Profile wall</a></h3> <p>Another profile function is <code>profile_solvers</code>, which creates a wall of performance profiles, accepting multiple costs and doing 1 vs 1 comparisons in addition to the traditional performance profile.</p> <pre><code class=language-julia >solved&#40;df&#41; &#61; &#40;df.status .&#61;&#61; :first_order&#41;
+costs &#61; &#91;df -&gt; .&#33;solved&#40;df&#41; * Inf &#43; df.t, df -&gt; .&#33;solved&#40;df&#41; * Inf &#43; df.iter&#93;
+costnames &#61; &#91;&quot;Time&quot;, &quot;Iterations&quot;&#93;
+p &#61; profile_solvers&#40;stats, costs, costnames&#41;
+Plots.svg&#40;p, &quot;profile3&quot;&#41;</code></pre><pre><code class="plaintext code-output">UndefVarError: profile_solvers not defined
+</code></pre> <p>#&#61; solved&#40;df&#41; &#61; &#40;df.status .&#61;&#61; :first<em>order&#41; costs &#61; &#91;df -&gt; .&#33;solved&#40;df&#41; * Inf &#43; df.t, df -&gt; .&#33;solved&#40;df&#41; * Inf &#43; df.iter&#93; costnames &#61; &#91;&quot;Time&quot;, &quot;Iterations&quot;&#93; p &#61; profile</em>solvers&#40;stats, costs, costnames&#41; Plots.svg&#40;p, &quot;profile3&quot;&#41; #&#61;</p> <p><img src=profile3.svg  alt="" /></p> <h3 id=example_of_benchmark_running ><a href="#example_of_benchmark_running" class=header-anchor >Example of benchmark running</a></h3> <p>Here is a useful tutorial on how to use the benchmark with specific solver: <a href="https://juliasmoothoptimizers.github.io/OptimizationProblems.jl/dev/benchmark/">Run a benchmark with OptimizationProblems</a> The tutorial covers how to use the problems from <code>OptimizationProblems</code> to run a benchmark for unconstrained optimization.</p> </div> </div> </div> </div> </section> <script>hljs.initHighlightingOnLoad(); hljs.configure({ tabReplace: ' ' });</script> <script> (function () { // Get the elements. // - the 'pre' element. // - the 'div' with the 'paste-content' id. var pre = document.getElementsByTagName('pre'); // Add a copy button in the 'pre' element with className language-julia for (var i = 0; i < pre.length; i++) { var isLanguage = pre[i].children[0].className.indexOf('language-julia'); if (isLanguage === 0) { var ion_icon = document.createElement('ion-icon'); ion_icon.name = 'copy'; var icon = document.createElement('span'); icon.className = 'icon has-text-primary'; icon.appendChild(ion_icon); var button = document.createElement('button'); button.className = 'button copy-button is-light is-primary'; button.appendChild(icon); pre[i].appendChild(button); } }; // Run Clipboard var copyCode = new ClipboardJS('.copy-button', { target: function (trigger) { return trigger.previousElementSibling; } }); copyCode.on('success', function (event) { event.clearSelection(); var btn = event.trigger; var old_button_class = btn.className; var old_icon_class = btn.children[0].className; btn.className = 'button copy-button is-primary'; btn.children[0].className = 'icon has-text-white'; window.setTimeout(function () { event.trigger.className = old_button_class; event.trigger.children[0].className = old_icon_class; }, 1000); }); })(); </script> <footer class=footer > <div class="content has-text-centered is-small"> &copy; Abel Soares Siqueira. <br> Last modified: March 15, 2022.<br> <a ckass=link  href="https://github.com/jso-docs/">jso-docs at GitHub</a> </div> </footer>

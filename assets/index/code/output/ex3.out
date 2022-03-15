@@ -1,0 +1,3 @@
+ArgumentError: Package SolverBenchmark not found in current path:
+- Run `import Pkg; Pkg.add("SolverBenchmark")` to install the SolverBenchmark package.
+

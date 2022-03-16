@@ -9,6 +9,7 @@ Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
 SolverBenchmark = "581a75fa-a23a-52d0-a590-d6201de2218a"
 
 [compat]
+DataFrames = "1"
 Franklin = "0.10"
 JSON = "0.21"
 NodeJS = "1.3"
